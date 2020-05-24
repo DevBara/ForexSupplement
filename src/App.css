@@ -2,9 +2,6 @@
   text-align: center;    
 }    
     
-.Header {    
-  background-color: rgba(169, 67, 63, 0.71);    
-  height: 150px;    
-  padding: 55px;    
-  color: cornsilk;    
-}  
+.currencyWrapper{
+  text-align: center;
+}
