@@ -7,9 +7,10 @@ import Home from './components/Home'
 
 function App() {
   return (
-    <div>
+    <div className="App">
+    <header className="Header">
       <Router>
-        <div className="App">
+        <div>
           <nav className="navBar">
             <ul>
               <li>
@@ -29,7 +30,8 @@ function App() {
             <Route path="/news" component={WorldNews} />
           </Switch>
         </div>
-    </Router>
+      </Router>
+    </header>
    </div>
   )
   
