@@ -1,8 +1,44 @@
+body{
+  background-color: black;
+}
+
 .App {    
   text-align: center;    
+
+  color: white;
 }    
     
 
 li{
-  list-style: none;
+  list-style-type: none;
+  display: inline-block;
+  margin: 15px;
+  text-align: center;
+  
 }
+
+
+.titleParent{
+  height: auto;
+  padding: 1em;
+  font-size: 20px;
+}
+.title{
+  margin: 10px; 
+}
+.subtitle{
+  margin: 0px;
+  padding: 0px;
+}
+
+.navBar{
+  background-color:green;
+}
+
+.link{
+  color: white;
+}
+
+
+/* End Header Styling */
+
