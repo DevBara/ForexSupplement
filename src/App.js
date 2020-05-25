@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 import Currencies from './components/Currencies';
 import WorldNews from './components/WorldNews'
 import Home from './components/Home'
+import EditDeleteCurrency from './components/EditDeleteCurrency';
 
 function App() {
   return (
@@ -25,9 +26,10 @@ function App() {
             </ul>
           </nav>
           <Switch>
-            <Route path="/home" component={Home} />
+            <Route path="/home" exact ={true} component={Home} />
             <Route path="/currencies" component={Currencies} />
             <Route path="/news" component={WorldNews} />
+            <Route path ="/currency/:id" component={EditDeleteCurrency} />
           </Switch>
         </div>
       </Router>

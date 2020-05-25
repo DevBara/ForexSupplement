@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
 
-export default class EditDeleteCurrency extends Component {
+ class EditDeleteCurrency extends Component {
 
     emptyItem = {
         currencyName:'',
@@ -40,12 +40,50 @@ export default class EditDeleteCurrency extends Component {
         this.setState({item});
     }
 
+    async handleSubmit(event){
+        event.preventDefault();
+
+        const{item} = this.state;
+
+        await fetch('/ForexSupplement_api/v1', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application.json'
+            },
+            body: JSON.stringify(item),
+        });
+        this.props.history.push('/currencies');
+    }
+
 
     render() {
-        return (
-            <div>
-                
+
+        const {item} = this.state;
+        
+    return <div>
+                <Container>
+                    <Form onSubmit={this.handleSubmit}>
+                        <FormGroup>
+                            <Label for ="currencyName">Currency Name</Label>
+                            <Input type ="text" name="currencyName" id = 'currencyName' value={item.currencyName || '' }
+                                onChange={this.handleChange} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="currencyCode">Currency Code</Label>
+                            <Input type ="text" name="currencyCode" id="currencyCode" value={item.currencyCode || ''}
+                                onChange={this.handleChange} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Button type="submit">Save</Button>{''}
+                            <Button tag={Link} to ="/currencies">Cancel</Button>
+                        </FormGroup>
+                    </Form>
+                </Container>
             </div>
-        )
+        
     }
+ 
 }
+
+export default withRouter(EditDeleteCurrency);
