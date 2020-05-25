@@ -6,6 +6,10 @@ import WorldNews from './components/WorldNews'
 import Home from './components/Home'
 import EditDeleteCurrency from './components/EditDeleteCurrency';
 
+
+
+console.log(process.env.REACT_APP_API_KEY);
+
 function App() {
   return (
     <div className="App">
