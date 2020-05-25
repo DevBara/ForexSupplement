@@ -6,8 +6,7 @@ import WorldNews from './components/WorldNews'
 import Home from './components/Home'
 import Header from './components/Header'
 import EditDeleteCurrency from './components/EditDeleteCurrency';
-import Login from './components/LoginIn'
-import LoginIn from './components/LoginIn';
+
 
 function App() {
   return (
@@ -38,7 +37,7 @@ function App() {
         </div>
       </Router>
     </header>
-    <LoginIn />
+    
     
    </div>
   )
