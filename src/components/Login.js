@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import firebase,{auth, provider} from './firebase.js'
+import { auth,provider } from "../firebase";
+
 
 export default class Login extends Component {
   constructor(props){
@@ -8,7 +9,27 @@ export default class Login extends Component {
     this.state={
       user: null
     }
-  }
+    
+    this.login=this.login.bind(this);
+    this.logout=this.logout.bind(this);
+
+}
+
+login(){
+  auth.signInWithPopup(provider)
+    .then((result) => {
+      const user=result.user;
+      this.setState({
+        user
+      })
+    })
+}
+
+logout(){
+
+}
+
+
   render() {
     return (
       <div className="loginWrapper">
