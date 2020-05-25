@@ -55,7 +55,7 @@ export default class Currencies extends Component {
                     <td>{currency.currencyRate}</td>
                     <td>
                         <ButtonGroup>
-                            <Button tag={Link} to={"/currencies" + currency.id}>Edit</Button>
+                            <Button >Edit</Button>
                             <Button onClick={() => this.remove(currency.id)}>Delete</Button>
                         </ButtonGroup>
                     </td>
