@@ -1,58 +1,51 @@
 import React, { Component } from 'react'
-import SkyLight from 'react-skylight';
+import { Link, withRouter } from 'react-router-dom';
+import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
 
-export default class AddCurrency extends Component {
+export default class EditDeleteCurrency extends Component {
+
+    emptyItem = {
+        currencyName:'',
+        currencyCode: '',
+        currencyAmt: '',
+        currencyRate: ''
+    };
 
     constructor(props){
         super(props);
 
-
         this.state= {
-            currencyName: '',
-            currencyCode: '',
-            currencyAmt: '',
-            currencyRate: ''
+            item: this.emptyItem
         };
+
+        // Bind Buttons
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    async componentDidMount(){
+        if(this.props.match.params.id !== 'new'){
+            const group = await (await fetch (`/ForexSupplement_api/v1/${this.props.match.params.id}`)).json();
+            this.setState({item: group});
+        }
+    }
 
-    handleChange = (event) => {
-        this.setState(
-            {[event.target.name]:
-            event.target.value}
-        );
-    };
+    handleChange(event){
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
 
-    handleSubmit = (event) =>{
-        event.preventDefault();
-        let currency = {
-            name: this.state.currencyName, 
-            code: this.state.currencyCode, 
-            amount: this.state.currencyAmt, 
-            rate: this.state.currencyRate
-        };
-        this.props.addCurrency(currency);
-        this.refs.addDialog.hide();
+        let item = {...this.state.item};
+        item[name] = value;
+        this.setState({item});
     }
 
 
     render() {
         return (
             <div>
-                <Skylight hideOnOverlayClicked ref="addDialog">
-                    <h3>Add Currency</h3>
-                    <form>
-                        <input type ="text" placeholder="Currency Name" name="currencyName" onChange={this.handleChange} />
-                        <input type ="text" placeholder ="Currency Code" name="currencyCode" onChange={this.handleChange} />
-                        <input type ="text" placeholder = "Amount" name="currencyAmt" onChange={this.handleChange} />
-                        <input type ="text" placeholder ="Exchange Rate" name="currencyRate" onChange={this.handleChange} />
-                    </form>
-                </Skylight>
-                <div>
-                    <button onClick={() => this.refs.addDialog.show()}>Add Currency</button>
-                </div>
+                
             </div>
-
         )
     }
 }
