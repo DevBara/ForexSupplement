@@ -1,7 +1,6 @@
 
 ## WireFrame Images
-
-![Image description](wireframe/Web 1920 – 1.jpg
+![WireFrame1](forex_supp/wireframe/Web 1920 – 1.jpg)
 
 
 
