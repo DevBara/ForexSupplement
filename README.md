@@ -1,7 +1,6 @@
 
 ## WireFrame Images
-![WireFrame1](forex_supp/wireframe/Web 1920 – 1.jpg)
-
+![Alt text](forex_supp/wireframe/Web 1920 – 1.jpg?raw=true "Optional Title")
 
 
 
