@@ -42,3 +42,20 @@ li{
 
 /* End Header Styling */
 
+.loginPhoto{
+  width: 20%;
+}
+
+.trackerContainer{
+  text-align: center;
+  margin-left: 24%;
+  font-size: 30px;
+}
+
+td,th{
+  border: solid 1px white;
+}
+
+.currencyTitle{
+  text-align: center;
+}
