@@ -1,5 +1,6 @@
 body{
   background-color: black;
+  
 }
 
 .App {    
@@ -59,3 +60,19 @@ td,th{
 .currencyTitle{
   text-align: center;
 }
+
+
+.subText{
+  font-size: 35px;
+}
+
+.homePic{
+  position:relative;
+  width: 55%;
+
+}
+
+.logInOut{
+  font-size: 25px;
+}
+
