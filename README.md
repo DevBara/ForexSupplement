@@ -10,10 +10,14 @@
 
 ## Forex Supplemental Aide
 
-Use this site to add currencies to track and to stay up to date with world news, That can effect exchange rates
+Use this site to add currencies to track and to stay up to date with world news, That can effect exchange rates.
+
+
 
 ## End User
-Those individuals who practice in the trading of currencies aka Forex.
+Those individuals who practice in the trading of currencies aka Forex and want a site that allows them to receive live news.
+
+Those individuals that want to make a plan for tracked currencies before they begin a trade. Forget a pad and pencil!
 
 ## Technologies
 Used react-strap to create tables and buttons(never used before)
