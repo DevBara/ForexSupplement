@@ -27,18 +27,6 @@ export default class Currencies extends Component {
             }))
         }
 
-        async remove(id){
-            await fetch(`http://localhost:8080/ForexSupplement_api/v1/currencies${id}`,{
-                method: 'DELETE',
-                headers:{
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                }
-            }).then(() => {
-                let updatedCurrencies = [...this.state.currencies].filter(i => i.id !== id);
-                this.setState({currencies: updatedCurrencies});
-            });
-        }
     
         render() {
             const{currencies,isLoading} = this.state;
@@ -53,18 +41,14 @@ export default class Currencies extends Component {
                     <td>{currency.currencyCode}</td>
                     <td>{currency.currencyAmt}</td>
                     <td>{currency.currencyRate}</td>
-                    <td>
-                        <ButtonGroup>
-                            <Button >Edit</Button>
-                            <Button onClick={() => this.remove(currency.id)}>Delete</Button>
-                        </ButtonGroup>
-                    </td>
                 </tr>
             });
 
             return (
-                <div>
-                    <h2>Currency Tracker</h2>
+                <div className="currencyTitle">
+                    <h2>Tracked Currencies</h2>
+                
+                <div className="trackerContainer">
                     <Table>
                         <thead>
                         <tr>
@@ -78,6 +62,7 @@ export default class Currencies extends Component {
                             {currencyList}
                         </tbody>                               
                     </Table>
+                </div>
                 </div>
             )
         }  
