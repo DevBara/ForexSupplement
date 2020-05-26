@@ -5,7 +5,7 @@ import Currencies from './components/Currencies';
 import WorldNews from './components/WorldNews'
 import Home from './components/Home'
 import Header from './components/Header'
-import EditDeleteCurrency from './components/EditDeleteCurrency';
+
 
 
 function App() {
@@ -32,7 +32,6 @@ function App() {
             <Route path="/home" exact ={true} component={Home} />
             <Route path="/currencies" component={Currencies} />
             <Route path="/news" component={WorldNews} />
-            <Route path ="/currency/:id" component={EditDeleteCurrency} />
           </Switch>
         </div>
       </Router>
