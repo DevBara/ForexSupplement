@@ -38,6 +38,7 @@ login(){
       this.setState({
         user
       })
+      window.location='http://localhost:3000/currencies'
     })
 }
 
@@ -60,6 +61,8 @@ logout(){
       this.setState({
         user:null
       });
+      
+      
     });
 
 }
@@ -77,43 +80,7 @@ logout(){
             }
           </div>
         </header>
-        {this.state.user ?
-          <div>
-            <div className='user-profile'>
-              <img src={this.state.user.photoURL} className="loginPhoto" />
-            </div>
-            <div className='container'>
-              <section className='add-item'>
-                <form onSubmit={this.handleSubmit}>
-                  <input type="text" name="username" placeholder="What's your name?" value={this.state.user.displayName || this.state.user.email} />
-                  <input type="text" name="currentItem" placeholder="Input currency" onChange={this.handleChange} value={this.state.currentItem} />
-                  <button>Add Item</button>
-                </form>
-              </section>
-              </div>
-          </div>
-          :
-          <div className='wrapper'>
-            <p>You must be logged in to see tracked currencies.</p>
-          </div>
-        }
-        <section className='display-item'>
-    <div className="wrapper">
-      <ul>
-        {this.state.items.map((item) => {
-          return (
-            <li key={item.id}>
-              <h3>{item.title}</h3>
-              <p>brought by: {item.user}
-                 {item.user === this.state.user.displayName || item.user === this.state.user.email ?
-                   <button onClick={() => this.removeItem(item.id)}>Remove Currency</button> : null}
-              </p>
-            </li>
-          )
-        })}
-      </ul>
-    </div>
-  </section>
+        
       </div>
            
     );
