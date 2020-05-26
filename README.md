@@ -1,6 +1,8 @@
 
 ## WireFrame Images
-![Alt text](forex_supp/wireframe/Web 1920 – 1.jpg?raw=true "Optional Title")
+<a href="https://postimg.cc/V0RtwRVh" target="_blank"><img src="https://i.postimg.cc/V0RtwRVh/Web-1920-1.jpg" alt="Web-1920-1"/></a><br/><br/>
+<a href="https://postimg.cc/23fXzStd" target="_blank"><img src="https://i.postimg.cc/23fXzStd/Web-1920-2.jpg" alt="Web-1920-2"/></a><br/><br/>
+<a href="https://postimg.cc/mhNphGxv" target="_blank"><img src="https://i.postimg.cc/mhNphG
 
 
 
