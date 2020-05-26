@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import {Button, ButtonGroup,Table} from 'reactstrap'
-import { Link } from 'react-router-dom';
+import { Button, Container, Form, FormGroup, Input, Label,Table } from 'reactstrap';
 
 //used for button references/help
 // https://www.truecodex.com/course/react-js/crud-4-create-insert-delete-update-in-react-js-using-api
@@ -51,19 +50,18 @@ export default class Currencies extends Component {
             });
           }
 
-        
-          async update(){
+          async add() {
             await fetch(`/ForexSupplement_api/v1/currencies`, {
-              method: 'POST' ,
+              method: 'POST',
               headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
-              },
-             
-              
-            });
-            this.props.history.push('/currencies');
+              }
+            })
           }
+
+ 
+          
         
     
     
@@ -81,7 +79,7 @@ export default class Currencies extends Component {
                     <td>{currency.currencyAmt}</td>
                     <td>{currency.currencyRate}</td>
                     <td> 
-                        <Button onClick={() => this.update(currency)}>Edit</Button>
+                        <Button onClick={() => this.add()}>Edit</Button>
                         <Button onClick={() => this.remove(currency.id)}>Delete</Button>
                     </td>
                 </tr>
@@ -106,7 +104,8 @@ export default class Currencies extends Component {
                             {currencyList}
                         </tbody>                               
                     </Table>
-                </div>
+                  
+                  </div>
                 </div>
             )
         }  

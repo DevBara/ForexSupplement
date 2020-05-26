@@ -74,9 +74,9 @@ logout(){
         <header>
           <div className="wrapper">
             {this.state.user ?
-              <button onClick={this.logout}>Logout</button>                
+              <button className="logInOut" onClick={this.logout}>Logout</button>                
             :
-              <button onClick={this.login}>Log In</button>              
+              <button className="logInOut" onClick={this.login}>Log In</button>              
             }
           </div>
         </header>
