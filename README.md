@@ -1,4 +1,12 @@
 
+## WireFrame Images
+
+![Image description](wireframe/Web 1920 – 1.jpg
+
+
+
+
+
 ## Forex Supplemental Aide
 
 Use this site to add currencies to track and to stay up to date with world news, That can effect exchange rates
@@ -11,8 +19,6 @@ Used react-strap to create tables and buttons(never used before)
 
 ## Deployed(Firebase)
 [Forex Supplement App](https://forex-app-c1e26.firebaseapp.com/ )
-
-
 
 
 
