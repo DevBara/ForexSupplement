@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import {Button, ButtonGroup,Table} from 'reactstrap'
 import { Link } from 'react-router-dom';
 
+//used for button references/help
+// https://www.truecodex.com/course/react-js/crud-4-create-insert-delete-update-in-react-js-using-api
 
 
 
@@ -11,15 +13,24 @@ export default class Currencies extends Component {
 
         this.state ={
             isLoading: true,
-            currencies: []
+            currencies: [],
+           
         };
     }
+    handleChange(event) {
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+        let item = {...this.state.item};
+        item[name] = value;
+        this.setState({item});
+      }
 
     componentDidMount(){
         this.setState({
             isLoading:true});
 
-            fetch('http://localhost:8080/ForexSupplement_api/v1/currencies')
+            fetch('/ForexSupplement_api/v1/currencies')
                 .then(response => response.json())
                 .then(data => this.setState({
                     currencies: data,
@@ -27,6 +38,34 @@ export default class Currencies extends Component {
             }))
         }
 
+        async remove(id) {
+            await fetch(`/ForexSupplement_api/v1${id}`, {
+              method: 'DELETE',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              }
+            }).then(() => {
+              let updatedCurrencies = [...this.state.currencies].filter(i => i.id !== id);
+              this.setState({currencies: updatedCurrencies});
+            });
+          }
+
+        
+          async update(){
+            await fetch(`/ForexSupplement_api/v1/currencies`, {
+              method: 'POST' ,
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+             
+              
+            });
+            this.props.history.push('/currencies');
+          }
+        
+    
     
         render() {
             const{currencies,isLoading} = this.state;
@@ -41,6 +80,10 @@ export default class Currencies extends Component {
                     <td>{currency.currencyCode}</td>
                     <td>{currency.currencyAmt}</td>
                     <td>{currency.currencyRate}</td>
+                    <td> 
+                        <Button onClick={() => this.update(currency)}>Edit</Button>
+                        <Button onClick={() => this.remove(currency.id)}>Delete</Button>
+                    </td>
                 </tr>
             });
 
@@ -56,6 +99,7 @@ export default class Currencies extends Component {
                             <th>Currency Code</th>
                             <th>Amount</th>
                             <th>Exchange Rate</th>
+                            <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
