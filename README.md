@@ -5,3 +5,6 @@ Use this site to add currencies to track and to stay up to date with world news,
 
 ## End User
 Those individuals who practice in the trading of currencies aka Forex.
+
+## Technologies
+Used react-strap to create tables and buttons(never used before)
