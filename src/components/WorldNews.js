@@ -7,8 +7,7 @@ export default class WorldNews extends Component {
         
         let array = new Array(14);
         let NewsObject = {
-          webTitle:'',
-          description:'',
+          title:'',
           urlToImage: '',
           url: String
         };
@@ -33,7 +32,6 @@ export default class WorldNews extends Component {
               for(let i =0;i<14;i++){
                 newNewsObject = {
                   title:result.articles[i].title,
-                  description:result.articles[i].description,
                   urlToImage: result.articles[i].urlToImage,
                   url: result.articles[i].url
                 };
@@ -70,7 +68,7 @@ export default class WorldNews extends Component {
               <br></br>
               <img src ={this.state.data[1].urlToImage} width="40%"/>
               <br></br>
-              <li>href=`{this.state.data[1].url}`</li>
+              <li>{this.state.data[1].url}</li>
             </ul>
           </div>
           <div className="row">

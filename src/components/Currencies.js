@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Container, Form, FormGroup, Input, Label,Table } from 'reactstrap';
+import { Button,Table } from 'reactstrap';
 
 //used for button references/help
 // https://www.truecodex.com/course/react-js/crud-4-create-insert-delete-update-in-react-js-using-api
@@ -29,7 +29,7 @@ export default class Currencies extends Component {
         this.setState({
             isLoading:true});
 
-            fetch('/ForexSupplement_api/v1/currencies')
+            fetch('http://localhost:8080/ForexSupplement_api/v1/currencies')
                 .then(response => response.json())
                 .then(data => this.setState({
                     currencies: data,
@@ -51,7 +51,7 @@ export default class Currencies extends Component {
           }
 
           async add() {
-            await fetch(`/ForexSupplement_api/v1/currencies`, {
+            await fetch(`/ForexSupplement_api/v1`, {
               method: 'POST',
               headers: {
                 'Accept': 'application/json',
